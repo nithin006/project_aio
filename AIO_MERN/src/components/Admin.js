@@ -12,7 +12,7 @@ function Admin() {
   return (
     <>
       <AdminNav/>
-      <h1>Admin Page</h1>
+      <h1 className="admin-head">Admin Page</h1>
     </>
   );
 }

@@ -11,9 +11,19 @@
   }
   
   .food-head{
-    margin-top: 100px;
+    margin-top: 70px;
     text-align: center;
     color: black;
+  }
+
+  .admin-head{
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .home-head{
+    text-align: center;
+    margin-top: 100px;
   }
   
   .register-form {
@@ -118,6 +128,8 @@
   /* Food  */
 
 .food-container {
+    margin-top: 70px;
+    text-align: center;
     background-color: #5fd59a;
     display: flex;
     flex-direction: column;
@@ -148,6 +160,7 @@
   /* Movie  */
 
 .movie-container {
+    text-align:center;
     margin-top: 70px;
     background-color: white;
     display: flex;

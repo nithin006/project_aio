@@ -54,7 +54,7 @@ function MovieAdmin() {
     <div className="movie-admin-container">
       <div className="movie-admin-main">
         <div className="movie-admin-form">
-          <div className="movie-admin-text">Upload Here</div>
+          <div className="movie-admin-text">Add Movie</div>
           <Form action="#">
             <FormGroup>
               <div className="movie-admin-input-row">

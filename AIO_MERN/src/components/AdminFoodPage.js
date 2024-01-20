@@ -9,7 +9,7 @@ function AdminFoodPage() {
     {
       image: '',
       price: '',
-      place: "",
+      hotel: "",
       foodType: ''
     },
   ]);
@@ -40,9 +40,9 @@ function AdminFoodPage() {
         {cats.map((cat) => (
           <div key={cat._id} className="food-item">
             <img src={cat.image} alt="Food" className="food-image" />
-            <h5 className="food-price">Place: {cat.place}</h5>
-            <h4 className="food-price">FoodType: {cat.foodType}</h4>
-            <h3 className="food-price">Price: {cat.price}</h3>
+            <h5 className="food-price">Hotel : {cat.hotel}</h5>
+            <h4 className="food-price">FoodType : {cat.foodType}</h4>
+            <h3 className="food-price">Price : {cat.price}</h3>
             <Button
                     onClick={() => deletePost(cat._id)}
                     variant="outline-danger"

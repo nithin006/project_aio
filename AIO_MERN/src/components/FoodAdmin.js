@@ -54,7 +54,7 @@ function FoodAdmin() {
     <div className="food-admin-container">
       <div className="food-admin-main">
         <div className="food-admin-form">
-          <div className="food-admin-text">Upload Here</div>
+          <div className="food-admin-text">Add Food Item</div>
           <Form action="#">
             <FormGroup>
               <div className="food-admin-input-row">

@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <Navbar_/>
-      <h1 >Home page</h1>
+      <h1 className="home-head">Home page</h1>
 
       {/* <p> this wed app is designed to order food, book Movies and search about cricket</p> */}
     </>

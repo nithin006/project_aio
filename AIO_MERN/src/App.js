@@ -14,6 +14,8 @@ import MovieAdmin from './components/MovieAdmin';
 import AdminFoodPage from './components/AdminFoodPage';
 import AdminMoviePage from './components/AdminMoviePage';
 
+import Protected from './components/Protected';
+
 import './App.css'
 
 const App = () => {
@@ -23,17 +25,17 @@ return (
     <Routes>
       <Route path="/register" element={<Register />} />
       <Route path="/" element={<Login />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/food" element={<Food />} />
-      <Route path="/sport" element={<Sport />} />
-      <Route path="/movie" element={<Movie />} />
+      <Route path="/home" element={<Protected><Home /></Protected>} />
+      <Route path="/food" element={<Protected><Food /></Protected>} />
+      <Route path="/sport" element={<Protected><Sport /></Protected>} />
+      <Route path="/movie" element={<Protected><Movie /></Protected>} />
 
-      <Route path="/admin" element={<Admin />} />
-      <Route path="/foodadmin" element={<FoodAdmin />} />
-      <Route path="/movieadmin" element={<MovieAdmin />} />
+      <Route path="/admin" element={<Protected><Admin /></Protected>} />
+      <Route path="/foodadmin" element={<Protected><FoodAdmin /></Protected>} />
+      <Route path="/movieadmin" element={<Protected><MovieAdmin /></Protected>} />
 
-      <Route path="/adminfoodpage" element={<AdminFoodPage />} />
-      <Route path="/adminmoviepage" element={<AdminMoviePage />} />
+      <Route path="/adminfoodpage" element={<Protected><AdminFoodPage /></Protected>} />
+      <Route path="/adminmoviepage" element={<Protected><AdminMoviePage /></Protected>} />
 
     </Routes>
   </Router>

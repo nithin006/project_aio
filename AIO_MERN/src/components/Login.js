@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Login = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const location= useLocation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (name === 'admin' && password === 'admin') {
       // If the provided name and password are 'admin', directly navigate to '/admin'
+      localStorage.setItem("token",name);
       alert("admin login success")
       navigate('/admin');
       return;
@@ -28,6 +31,7 @@ const Login = () => {
       if (response.status === 200 && response.data.redirect) {
 
         // Redirect to the URL received from the server upon successful login
+        localStorage.setItem("token",name);
         alert("login success full")
         navigate(response.data.redirect);
       }
@@ -36,6 +40,15 @@ const Login = () => {
       alert("login failed")
     }
   };
+
+  useEffect(() => {
+    // Clear the token from localStorage when on the login page
+    if (location.pathname === '/') 
+    // if (window.location.href === "http://localhost:8000/") 
+    {
+      localStorage.removeItem("token");
+    }
+  }, []);
 
   return (
     <div className="login-container mt-5">

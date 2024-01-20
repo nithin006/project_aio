@@ -10,7 +10,7 @@
     background-color: #fff;
   }
   
-  h1 {
+  .food-head{
     margin-top: 100px;
     text-align: center;
     color: black;
@@ -148,6 +148,7 @@
   /* Movie  */
 
 .movie-container {
+    margin-top: 70px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -179,6 +180,7 @@
   /* Sport  */
 
 .sport-container {
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -433,12 +435,16 @@
   margin-top: 10px;
 }
 
+.movie-head{
+  text-align: center;
+}
+
 
 .movie-totalamount{
 
 
   margin-top: 50px;
-  margin-left: -170px;
+  margin-left: 370px;
   /* padding: 10px; */
   position: fixed;
   background-color: #8ac063;

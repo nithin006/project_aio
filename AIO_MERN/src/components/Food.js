@@ -23,7 +23,7 @@ function Food() {
     <Navbar_/>
     <div className="food-container">
       <div>
-        <h1>FOOD PAGE</h1>
+        <h1 className="food-head">FOOD PAGE</h1>
         {cats.map((cat) => (
           <div key={cat._id} className="food-item">
             <img src={cat.image} alt="Food" className="food-image" />

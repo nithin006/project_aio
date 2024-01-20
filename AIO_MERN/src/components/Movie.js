@@ -37,7 +37,7 @@ function Movie() {
     <Navbar_/>
     <div className="movie-container">
       <div>
-        <h1>MOVIE PAGE</h1>
+        <h1 className="movie-head">MOVIE PAGE</h1>
         <button className="movie-totalamount">Total Amount: {totalAmount}</button>
         {cats.map((cat) => (
           <div key={cat._id} className="movie-item">

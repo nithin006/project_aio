@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar_ from './Navbar_';
 
+// Fetches and displays food items from the backend
 function Food() {
   const [cats, setCats] = useState([
     {
@@ -13,6 +14,7 @@ function Food() {
   ]);
 
   useEffect(() => {
+    // Retrieves food data from the backend using the fetch API
     fetch('http://localhost:8000/getfood')
       .then((res) => res.json())
       .then((jsonRes) => setCats(jsonRes));
@@ -20,10 +22,12 @@ function Food() {
 
   return (
     <>
+    
     <Navbar_/>
     <div className="food-container">
       <div>
         <h1 className="food-head">FOOD PAGE</h1>
+        {/* •	Maps over the fetched data to display individual food items */}
         {cats.map((cat) => (
           <div key={cat._id} className="food-item">
             <img src={cat.image} alt="Food" className="food-image" />

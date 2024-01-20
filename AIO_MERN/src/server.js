@@ -24,20 +24,18 @@ const userSchema = new mongoose.Schema({
   password: String,
   email: String,
 });
-
 const User = mongoose.model('mynew', userSchema);
 
-
+// Defines a food schema and model for MongoDB
 const foodSchema =  new mongoose.Schema({
   image: String,
   price: Number,
   foodType: String,
   hotel: String,
-
 });
-
 const Food = mongoose.model('food', foodSchema);
 
+// POST /postfood: Adds a new food item to the database.
 app.post("/postfood",(req,res) => {
   const newFood = new Food({
     image: req.body.image,
@@ -50,6 +48,8 @@ app.post("/postfood",(req,res) => {
     .catch((err) => console.log(err))
 })
 
+
+// GET /getfood: Retrieves all food items from the database
 app.get("/getfood",(req,res) => {
   Food.find()
   .then((docs)=> { res.json(docs)})
@@ -57,7 +57,7 @@ app.get("/getfood",(req,res) => {
   + err));
 })
 
-
+// Defines a movie schema and model for MongoDB
 const movieSchema =  new mongoose.Schema({
   image: String,
   price: Number,
@@ -68,9 +68,9 @@ const movieSchema =  new mongoose.Schema({
     default:0,
   },
 });
-
 const Movie = mongoose.model('movie', movieSchema);
 
+// POST /postfood: Adds a new food item to the database
 app.post("/postmovie",(req,res) => {
   const newMovie = new Movie({
     image: req.body.image,
@@ -83,6 +83,7 @@ app.post("/postmovie",(req,res) => {
     .catch((err) => console.log(err))
 })
 
+// GET /getmovie: Retrieves all movie items from the database
 app.get("/getmovie",(req,res) => {
   Movie.find()
   .then((docs)=> { res.json(docs)})
@@ -91,7 +92,7 @@ app.get("/getmovie",(req,res) => {
 })
 
 
-// Register Route
+// POST /register: Registers a new user in the database
 app.post('/register', async (req, res) => {
   const { name, password, email } = req.body;
   console.log('Received data:', { name, password, email }); // Log received data
@@ -113,7 +114,7 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// Login Route
+// POST /login: Handles user login and redirects on success
 app.post('/login', async (req, res) => {
   const { name, password } = req.body;
   
@@ -132,6 +133,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
+// DELETE /deletefood/:id: Deletes a food item by ID
 app.delete('/deletefood/:id', async (req, res) => {
   const id = req.params.id;
   try {
@@ -144,6 +146,7 @@ app.delete('/deletefood/:id', async (req, res) => {
   }
 });
 
+// DELETE /deletemovie/:id: Deletes a movie item by ID
 app.delete('/deletemovie/:id', async (req, res) => {
   const id = req.params.id;
   try {
@@ -156,7 +159,7 @@ app.delete('/deletemovie/:id', async (req, res) => {
   }
 });
 
-// Start the server
+// Start the server Listens on the specified port (8000)
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

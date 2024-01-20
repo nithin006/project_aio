@@ -5,6 +5,8 @@ import { Form, FormGroup } from 'react-bootstrap';
 import axios from 'axios';
 import AdminNav from './AdminNav';
 
+
+// Allows the Admin to upload movie items
 function MovieAdmin() {
   const [post, setPost] = useState({
     image: "",
@@ -27,6 +29,7 @@ function MovieAdmin() {
     };
   };
 
+// On submit, sends a POST request to the backend to add a new movie item
   const createPost = (e) => {
     e.preventDefault();
 

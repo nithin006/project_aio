@@ -14,12 +14,14 @@ function AdminFoodPage() {
     },
   ]);
 
+  // Fetches and displays a list of food items
   useEffect(() => {
     fetch('http://localhost:8000/getfood')
       .then((res) => res.json())
       .then((jsonRes) => setCats(jsonRes));
   }, []);
 
+  // Allows the Admin to delete a movie item
   const deletePost = (id) => {
     console.log("delete------food-------qwerty");
     console.log(id);

@@ -14,11 +14,13 @@ function Movie() {
   ]);
 
   useEffect(() => {
+    // Fetches movie data 
     fetch('http://localhost:8000/getmovie')
       .then((res) => res.json())
       .then((jsonRes) => setCats(jsonRes));
   }, []);
 
+  // Keeps track of the total amount and allows adding tickets
   const [totalAmount, setTotalAmount] = useState(0);
 
   const handleButtonClick = (cat) => {

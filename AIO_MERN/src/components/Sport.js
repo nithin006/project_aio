@@ -7,6 +7,7 @@ function Sport() {
   const [seriesData, setSeriesData] = useState([]);
   const [type, setType] = useState('');
 
+  // etFches and displays sports series information from an external API
   const fetchData = async () => {
     const options = {
       method: 'GET',
@@ -59,6 +60,7 @@ function Sport() {
       <div className="sport-series-container">
         <h2>Cricket Series Information</h2>
         <ul>
+          {/* •	Displays detailed information about cricket series based on the fetched data */}
           {seriesData.map((series) => (
            
             <li key={series.id} className="sport-series-item">

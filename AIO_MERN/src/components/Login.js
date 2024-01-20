@@ -3,12 +3,14 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
+// State variables for user input (name, password)
 const Login = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const location= useLocation();
 
+  // handleSubmit function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -50,6 +52,7 @@ const Login = () => {
     }
   }, []);
 
+  // Sends a POST request to the /login endpoint on form submission 
   return (
     <div className="login-container mt-5">
       <h1 className="login-title">Login</h1>

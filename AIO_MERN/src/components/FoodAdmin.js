@@ -5,6 +5,7 @@ import { Form, FormGroup } from 'react-bootstrap';
 import axios from 'axios';
 import AdminNav from './AdminNav';
 
+// Allows the Admin to upload food items.
 function FoodAdmin() {
   const [post, setPost] = useState({
     image: "",
@@ -27,6 +28,8 @@ function FoodAdmin() {
     };
   };
 
+
+  // On submit, sends a POST request to the backend to add a new food item
   const createPost = (e) => {
     e.preventDefault();
 

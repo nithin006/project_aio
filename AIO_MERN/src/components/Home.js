@@ -11,6 +11,7 @@ function Home() {
 
   return (
     <>
+     {/* •	Displays a navigation bar (Navbar_) and a heading */}
       <Navbar_/>
       <h1 className="home-head">Home page</h1>
 

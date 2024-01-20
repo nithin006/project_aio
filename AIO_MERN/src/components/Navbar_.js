@@ -8,6 +8,7 @@ function Navbar_() {
     marginLeft: 'auto',
   };
 
+  // Contains navigation links for 'Food', 'Sport', and 'Movie'
   return (
     <Navbar bg="light" shadow="lg" expand="lg" fixed="top">
       <Navbar.Brand href="/home">HOME</Navbar.Brand>

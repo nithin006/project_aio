@@ -1,0 +1,1 @@
+### this code sets up a basic Express.js server, connects to a MongoDB database, defines schemas for two collections ("food" and "movie"), and provides two API endpoints ("/getfood" and "/getmovie") to fetch data from the respective collections in the database.
